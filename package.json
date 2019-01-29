@@ -1,0 +1,27 @@
+{
+  "name": "salabot-fun",
+  "version": "1.0.0-beta.0",
+  "description": "Salabot plugin module with useless but fun commands.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morko/salabot-fun.git"
+  },
+  "keywords": [
+    "salabot",
+    "discord"
+  ],
+  "author": "Oskari Pöntinen <mail.morko@gmail.com> (https://github.com/morko)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/morko/salabot-fun/issues"
+  },
+  "homepage": "https://github.com/morko/salabot-fun#readme",
+  "dependencies": {
+    "querystring": "^0.2.0",
+    "salabot": "github:morko/salabot"
+  }
+}
