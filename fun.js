@@ -60,7 +60,7 @@ function stroke(msg, bot, name) {
 
 module.exports.advice = advice;
 function advice(msg, bot) {
-  let url = 'http://api.adviceslip.com/advice';
+  let url = 'https://api.adviceslip.com/advice';
   return bot.utils.http.getJSON(url)
     .then((result) => {
       return msg.channel.send(result.slip.advice);
