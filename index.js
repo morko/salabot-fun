@@ -28,8 +28,6 @@ module.exports = {
     category: 'fun',
     description: "Gives a dogfact.",
     aliases: ['dogfacts'],
-    timeout: 10,
-    level: 0,
     run: fun.dogfact
   },
 
@@ -39,8 +37,6 @@ module.exports = {
     category: 'fun',
     description: "Gives a catfact.",
     aliases: ['catfacts'],
-    timeout: 10,
-    level: 0,
     run: fun.catfact
   },
 
@@ -49,17 +45,9 @@ module.exports = {
     name: 'stroke',
     category: 'fun',
     description: "Strokes someones ego.",
-    args: ["target"],
+    arguments: ["target"],
     argumentsOptional: false,
     run: fun.stroke
-  },
-
-  yomomma: {
-    type: 'command',
-    name: 'yomomma',
-    category: 'fun',
-    description: "A random yomomma joke.",
-    run: fun.yomomma
   },
 
   advice: {
@@ -76,8 +64,9 @@ module.exports = {
     category: 'fun',
     description: "Search word from Urban Dictionary.",
     aliases: ['ud', 'urban'],
-    args: ["word"],
-    argumentsOptional: fun.urbandictionary
+    arguments: ["word"],
+    argumentsOptional: false,
+    run: fun.urbandictionary
   },
 
   fact: {
@@ -95,7 +84,7 @@ module.exports = {
     description: 'Rolls dice using rolz.org. '
         + '(check their website for dice codes).',
     argumentsOptional: true,
-    args: ["dice code"],
+    arguments: ["dice code"],
     run: fun.dice
   },
 
@@ -105,8 +94,8 @@ module.exports = {
     category: 'fun',
     description: "Insults someone.",
     aliases: ['insult'],
-    args: ["target"],
-    argumentsOptional: true,
+    arguments: ["target"],
+    argumentsOptional: false,
     run: fun.fancyinsult
   },
 
@@ -116,6 +105,8 @@ module.exports = {
     category: 'fun',
     description: "Makes a prediction using a Magic 8 Ball",
     aliases: ['8ball'],
+    arguments: ["thing you want prediction for"],
+    argumentsOptional: false,
     run: fun.magic8ball
   },
 }

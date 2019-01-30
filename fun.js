@@ -1,7 +1,6 @@
-const config = require('./config.json');
 const querystring = require('querystring');
 
-module.exports.randomcat;
+module.exports.randomcat = randomcat;
 function randomcat(msg, bot, args) {
   let url = 'http://aws.random.cat/meow';
   return bot.utils.http.getJSON(url)
@@ -10,7 +9,7 @@ function randomcat(msg, bot, args) {
     });
 }
 
-module.exports.randomdog;
+module.exports.randomdog = randomdog;
 function randomdog(msg, bot, args) {
   let url = 'https://random.dog/woof.json';
   return bot.utils.http.getJSON(url)
@@ -19,7 +18,7 @@ function randomdog(msg, bot, args) {
     });
 }
 
-module.exports.dogfact;
+module.exports.dogfact = dogfact;
 function dogfact(msg, bot) {
   let url = 'https://dog-api.kinduff.com/api/facts';
   return bot.utils.http.getJSON(url)
@@ -28,7 +27,7 @@ function dogfact(msg, bot) {
     });
 }
 
-module.exports.catfact;
+module.exports.catfact = catfact;
 function catfact(msg, bot) {
   let url = 'https://catfact.ninja/fact';
   return bot.utils.http.getJSON(url)
@@ -37,7 +36,7 @@ function catfact(msg, bot) {
     });
 }
 
-module.exports.stroke;
+module.exports.stroke = stroke;
 function stroke(msg, bot, name) {
   let params = {
     firstName: name,
@@ -59,16 +58,7 @@ function stroke(msg, bot, name) {
     });
 }
 
-module.exports.yomomma;
-function yomomma(msg, bot) {
-  let url = 'http://api.yomomma.info/';
-  return bot.utils.http.getJSON(url)
-    .then((result) => {
-      return msg.channel.send(result.joke);
-    });
-}
-
-module.exports.advice;
+module.exports.advice = advice;
 function advice(msg, bot) {
   let url = 'http://api.adviceslip.com/advice';
   return bot.utils.http.getJSON(url)
@@ -77,7 +67,7 @@ function advice(msg, bot) {
     });
 }
 
-module.exports.urbandictionary;
+module.exports.urbandictionary = urbandictionary;
 function urbandictionary(msg, bot, word) {
   let params = {
     term: word
@@ -97,7 +87,7 @@ function urbandictionary(msg, bot, word) {
     });
 }
 
-module.exports.fact;
+module.exports.fact = fact;
 function fact(msg, bot) {
   let url = 'http://www.fayd.org/api/fact.xml';
   return bot.utils.http.getXML(url)
@@ -106,7 +96,7 @@ function fact(msg, bot) {
     });
 }
 
-module.exports.dice;
+module.exports.dice = dice;
 function dice (msg, bot, dice) {
   let dice = dice || 'd6';
   let url = 'https://rolz.org/api/?' + dice + '.json';
@@ -117,7 +107,7 @@ function dice (msg, bot, dice) {
     });
 }
 
-module.exports.fancyinsult;
+module.exports.fancyinsult = fancyinsult;
 function fancyinsult(msg, bot, target) {
   let url = 'http://quandyfactory.com/insult/json/';
   return bot.utils.http.getJSON(url)
@@ -130,7 +120,7 @@ function fancyinsult(msg, bot, target) {
     });
 }
 
-module.exports.magic8ball;
+module.exports.magic8ball = magic8ball;
 let answers = [
   'Signs point to yes.',
   'Yes.',
@@ -157,7 +147,7 @@ let answers = [
   'Possibly.',
   'There is a small chance.'
 ];
-function (msg, bot) {
+function magic8ball(msg, bot) {
   let answer = answers[Math.floor(Math.random() * answers.length)];
   return msg.channel.send('The Magic 8 Ball says:\n```' + answer + '```');
 }
