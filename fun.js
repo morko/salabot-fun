@@ -3,7 +3,7 @@ const querystring = require('querystring');
 
 module.exports.randomcat;
 function randomcat(msg, bot, args) {
-  let url = 'http://random.cat/meow';
+  let url = 'http://aws.random.cat/meow';
   return bot.utils.http.getJSON(url)
     .then((result) => {
       return msg.channel.send(result.file);
@@ -15,7 +15,7 @@ function randomdog(msg, bot, args) {
   let url = 'https://random.dog/woof.json';
   return bot.utils.http.getJSON(url)
     .then((result) => {
-      return msg.channel.send(result.file);
+      return msg.channel.send(result.url);
     });
 }
 
