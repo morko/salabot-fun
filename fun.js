@@ -15,7 +15,7 @@ function randomdog(msg, bot, args) {
   let url = 'https://random.dog/woof.json';
   return bot.utils.http.getJSON(url)
     .then((result) => {
-      return msg.channel.send(result.file);
+      return msg.channel.send(result.url);
     });
 }
 
