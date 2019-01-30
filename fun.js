@@ -97,8 +97,8 @@ function fact(msg, bot) {
 }
 
 module.exports.dice = dice;
-function dice (msg, bot, dice) {
-  let dice = dice || 'd6';
+function dice (msg, bot, diceCode) {
+  let dice = diceCode || 'd6';
   let url = 'https://rolz.org/api/?' + dice + '.json';
   return bot.utils.http.getJSON(url)
     .then((result) => {
